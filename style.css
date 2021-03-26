@@ -423,6 +423,7 @@ ul {
   border-radius: 8px;
   padding: 6px 0;
   /* margin: 10px 30px 10px 0; */
+  cursor: pointer;
 }
 
 .judul {

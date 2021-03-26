@@ -8,11 +8,7 @@ function ShowListBuku(arrBuku) {
     buku.innerHTML = `<img src="${valBuku.cover}">
         <h4 class="judul">${valBuku.judul}</h4>
         <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star-half-o" aria-hidden="true"></i>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
+                 <p>Rating: ${valBuku.rating} of 5</p>
         </div>
         <p class="money">Rp. ${moneyFormatter(valBuku.harga)}</p>
            <div onclick="addToCart(${i})" class="cart-button"> Add To Cart</div>
