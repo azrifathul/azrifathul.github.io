@@ -366,6 +366,10 @@ ul {
   z-index: 9;
   left: 50%;
   transform: translate(-50%, 0);
+  padding: 49px 33px;
+  width: 567px;
+  background: white;
+  border-radius: 32px;
 }
 
 /* Add styles to the form container */
@@ -402,6 +406,7 @@ ul {
   width: 100%;
   margin-bottom: 10px;
   opacity: 0.8;
+  margin: 10px 0;
 }
 
 /* Add a red background color to the cancel button */
@@ -434,4 +439,8 @@ ul {
 .money {
   font-size: 20px;
   margin: 12px 0;
+}
+
+.title-add {
+  margin-bottom: 16px;
 }
