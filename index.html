@@ -1,0 +1,324 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bukulapak</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="Bukulapak2.png" alt="Logo bukulapak" width="200px">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="./home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="./catalog.html">Catalog</a></li>
+                        <li onclick="showFormLogin()" id="login-admin" style="display:none;"><a href="#loginadmin">Login Admin</a></li>
+                        <li id="add-catalog" style="display:none;" onclick="openForm()"><a href="#catalog">Add Catalog</a></li>
+                    </ul>
+                </nav>
+                <a href="./cart.html">
+                <img src="cart.png" alt="cart" width="27px">
+
+                </a>
+            </div>
+            <!-- start :tambahan coding untuk add catalog -->
+            <div class="form-popup" id="myForm">
+                <div class="form-container">
+                    <h3>Tambah Katalog</h3>
+            
+                    <label><b>Judul</b></label>
+                    <input type="text" placeholder="Input Judul" name="judul" id="judul" required>
+                    <label><b>Deskripsi</b></label>
+                    <input type="text" placeholder="Input Deskripsi" name="deskripsi" id="deskripsi" required>
+                    <label><b>Cover</b></label>
+                    <input type="text" placeholder="Input URL Cover" name="cover" id="cover" required>
+                    <label><b>Harga</b></label>
+                    <input type="text" placeholder="Input Harga" name="harga" id="harga" required>
+                    <label><b>Stok</b></label>
+                    <input type="text" placeholder="Input Stok" name="stok" id="stok" required>
+                    <label><b>Rating</b></label>
+                    <input type="text" placeholder="Input Rating" name="rating" id="rating" required>
+            
+                    <button class="btn" onclick="addCatalog()">Submit</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </div>
+            </div>
+            <!-- end :tambahan coding untuk add catalog -->
+            <div class="row">
+                <div class="col-2">
+                    <h1>Welcome to Bukulapak</h1>
+                    <p> Bukulapak adalah toko buku online yang dipercaya aman, mudah, terpercaya, dan lengkap. Didirikan
+                        oleh kelompok 1 dan sudah memiliki partner dalam pembayaran buku. Bukulapak menyediakan berbagai
+                        macam buku mulai dari buku nusantara hingga impor. Anda dapat melihat buku rekomendasi dari kami
+                        di di web ini. <br><br>
+                        So tunggu apalagi belanja di Bukulapak sekarang!
+                    </p>
+                    <br>
+                    <a href="" class="btn">Explore now <span>&#10140;</span></a>
+                </div>
+                <div class="col-2">
+                    <img src="ilustrator2.png" alt="ilustrator">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FEATURED CATEGORY -->
+    <br><br>
+    <div class="categories">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <img src="Book1.png" alt="Book1" width="140px">
+                    <br>
+                    <p>New Books</p>
+                </div>
+
+                <div class="col-3">
+                    <img id="buku2" src="Book2.png" alt="Book1" width="120px" margin-left="10px">
+                    <br>
+                    <p>Recommended books</p>
+                </div>
+
+                <div class="col-3">
+                    <img src="Book3.png" alt="Book1" width="150px">
+                    <br>
+                    <p>Import books</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FEATURED PRODUCT -->
+    <br><br>
+    <div class="small-container">
+        <h2 class="title">Featured Products</h2>
+        <div class="row" id="boxBuku">
+            
+        </div>
+        <h2 class="title">New Books</h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="Narnia.jpg">
+                <h4>The Lion, the Witch and the Wardrobe (The Chronicles of Narnia)</h4>
+                <div class="rating">
+                    <i class="fa fa-star aria-hidden=" true""></i>
+                    <i class="fa fa-star aria-hidden=" true""></i>
+                    <i class="fa fa-star aria-hidden=" true""></i>
+                    <i class="fa fa-star aria-hidden=" true""></i>
+                    <i class="fa fa-star-o aria-hidden=" true""></i>
+                </div>
+                <p>Rp. 80.000</p>
+            </div>
+            <div class="col-4">
+                <img src="GonewithTheWind.jpg">
+                <h4>Gone with The Wind</h4>
+                <div class="rating">
+                    <i class="fa fa-star aria-hidden=" true""></i>
+                    <i class="fa fa-star aria-hidden=" true""></i>
+                    <i class="fa fa-star aria-hidden=" true""></i>
+                    <i class="fa fa-star aria-hidden=" true""></i>
+                    <i class="fa fa-star aria-hidden=" true""></i>
+                </div>
+                <p>Rp. 150.000</p>
+            </div>
+            <div class="col-4">
+                <img src="theRight.jpg">
+                <h4>The Righteous Mind: Jonathan Haidt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                </div>
+                <p>Rp. 200.000</p>
+            </div>
+        </div>
+        <h2 class="title">Recommended Books</h2>
+        <div class="row" id="recomended-book">
+
+        </div>
+        <div class="import">
+            <h2 class="title">Import Books</h2>
+            <div class="row">
+                <div class="col-4">
+                    <img src="HomoDeus.jpeg">
+                    <h4>Homo Deus: A Brief History of Tomorrow</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                    <p>Rp. 120.000</p>
+                </div>
+                <div class="col-4">
+                    <img src="theArtOfLoving.jpg">
+                    <h4>The Art Of Loving: Erich Fromm</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                    <p>Rp. 100.000</p>
+                </div>
+                <div class="col-4">
+                    <img src="theSubtleArt.jpg">
+                    <h4>The Subtle Art of Not Giving a F*ck</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <p>Rp. 90.000</p>
+                </div>
+                <div class="col-4">
+                    <img src="theRight.jpg">
+                    <h4>The Righteous Mind: Jonathan Haidt</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    </div>
+                    <p>Rp. 200.000</p>
+                </div>
+            </div>
+        </div>
+        <!----------------- testimonial ---------------------->
+        <div class="testimonial">
+            <h2 class="title">Testimonial</h2>
+            <div class="small-container">
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fa fa-quote-left"></i>
+                        <p>Sarangheo Bukulapak</p>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <img src="user-1.jpg">
+                        <h3>Park Shin Hye</h3>
+                    </div>
+                    <div class="col-3">
+                        <i class="fa fa-quote-left"></i>
+                        <p>Bukulapak selalu ada selalu bisa</p>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <img src="user-2.jpg">
+                        <h3>Winona Ryder</h3>
+                    </div>
+                    <div class="col-3">
+                        <i class="fa fa-quote-left"></i>
+                        <p>Tempat belanja buku online ternyaman<br>
+                            dan andalan saya</p>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <img src="user-3.jpg">
+                        <h3>Timothee Chalamet</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!----------------- partner ---------------------->
+        <div class="partner">
+            <h2 class="title">Partner</h2>
+            <div class="small-container">
+                <div class="row">
+                    <div class="col-5">
+                        <img src="Logo OVO.png">
+                    </div>
+                    <div class="col-5">
+                        <img src="dana.jpg">
+                    </div>
+                    <div class="col-5">
+                        <img src="applikasi-gopay.png">
+                    </div>
+                    <div class="col-5">
+                        <img src="Logo Link Aja.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!----------------- footer ---------------------->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android and ios mobile phone.</p>
+                <div class="app-logo">
+                    <img src="app-store.png">
+                    <img src="en_badge_web_generic.png">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="Bukulapak2.png">
+                <p>Number one online bookstore in Indonesia </p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Copyright 2021 - Kelompok 1</p>
+    </div>
+
+
+</body>
+<script src="data.js"></script>
+<script src="showlistbuku.js"></script>
+<script src="login.js"></script>
+<script src="addcatalog.js"></script>
+<script src="displayrecomended.js"></script>
+<script src="cart.js"></script>
+
+</html>
