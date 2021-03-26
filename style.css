@@ -366,7 +366,7 @@ ul {
   z-index: 9;
   left: 50%;
   transform: translate(-50%, 0);
-  padding: 49px 33px;
+  padding: 2px 33px;
   width: 567px;
   background: white;
   border-radius: 32px;
@@ -459,8 +459,10 @@ ul {
 #book-select {
   margin-left: 10px;
   height: 42px;
-  border-radius: 18px;
+  border-radius: 30px;
   background: white;
+  font-size: 14;
+  color: grey;
 }
 
 .hidden-filter {
