@@ -52,3 +52,40 @@ function moneyFormatter(number) {
 }
 
 ShowListBuku(daftarBuku);
+
+function resetProduct() {
+  const listOfProduct = document.getElementById("boxBuku");
+  listOfProduct.innerHTML = "";
+}
+const eventTarget = document.getElementById("input-data");
+
+let result = [];
+eventTarget.addEventListener("keyup", (event) => {
+  result2 = event.target.value;
+  let result = [];
+  for (let i = 0; i < daftarBuku.length; i++) {
+    const data = document.getElementById("book-select").value;
+
+    if (data === "maxHarga" || data === "minHarga" || data === "stok") {
+      if (data === "maxHarga") {
+        if (result2 === "" || daftarBuku[i].harga <= Number(result2)) {
+          result.push(daftarBuku[i]);
+        }
+      } else if (data === "minHarga") {
+        if (result2 === "" || daftarBuku[i].harga >= Number(result2)) {
+          result.push(daftarBuku[i]);
+        }
+      } else if (data === "stok") {
+        if (daftarBuku[i][data] >= Number(result2)) {
+          result.push(daftarBuku[i]);
+        }
+      }
+    } else {
+      if (daftarBuku[i][data].toLowerCase().includes(result2.toLowerCase())) {
+        result.push(daftarBuku[i]);
+      }
+    }
+  }
+  resetProduct();
+  ShowListBuku(result);
+});

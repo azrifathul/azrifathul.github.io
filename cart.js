@@ -1,3 +1,4 @@
+
 let cart = [];
 
 if (JSON.parse(localStorage.getItem("myObj"))) {
